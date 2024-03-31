@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 # import os
 import openai
 
-openai.api_key = "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"
+openai.api_key = ""
 
 app = Flask(__name__)
 
