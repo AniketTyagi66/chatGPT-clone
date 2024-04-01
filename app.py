@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 # import os
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ def hello_world():
     chats = mongo.db.chats.find({})
     myChats = [chat for chat in chats]
     print(myChats)
-    return render_template("index.html", context={"myChats": myChats})
+    return render_template("index.html", myChats=myChats)
 
 @app.route("/api", methods=["GET", "POST"])
 def qa():
@@ -48,5 +48,5 @@ def qa():
     data = {"result": "Hello welcome to my api"}
     return jsonify(data)
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
